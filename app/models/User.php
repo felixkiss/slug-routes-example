@@ -49,4 +49,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->email;
 	}
 
+	/**
+	 * Virtual attribute for full name.
+	 * Combines first_name and last_name db columns.
+	 *
+	 * @return string
+	 */
+	public function getNameAttribute()
+	{
+		return $this->first_name.' '.$this->last_name;
+	}
 }

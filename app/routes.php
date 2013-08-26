@@ -15,3 +15,9 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+// Bind {user} to User model
+Route::model('user', 'User');
+
+Route::get('users', array('as' => 'users.index', 'uses' => 'UsersController@index'));
+Route::get('users/{user}', array('as' => 'users.show', 'uses' => 'UsersController@show'));
