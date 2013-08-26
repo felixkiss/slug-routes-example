@@ -17,6 +17,10 @@ Route::get('/', function()
 });
 
 // Bind {user} to User model
+// If model implements SluggableInterface, it will try to match
+// the value to the column specified by getSlugIdentifier()
+// If model doesn't implement SluggableInterface, it will fallback
+// to the default behaviour of using id.
 Route::model('user', 'User');
 
 Route::get('users', array('as' => 'users.index', 'uses' => 'UsersController@index'));

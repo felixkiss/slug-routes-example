@@ -16,11 +16,13 @@ class UsersTableSeeder extends Seeder {
         User::create(array(
             'first_name' => 'Taylor',
             'last_name' => 'Otwell',
+            'slug' => 'taylor-otwell',
         ));
 
         User::create(array(
             'first_name' => 'Dayle',
             'last_name' => 'Rees',
+            'slug' => 'dayle-rees',
         ));
     }
 
